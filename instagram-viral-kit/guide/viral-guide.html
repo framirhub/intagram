@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="instagram-viral-kit — Ghidul vizual de viralitate pe Instagram 2026: algoritmul, metricile, setup-ul tehnic, SEO, Reels, carusele, hook-uri, hack-uri și planul de 30 de zile.">
+<title>instagram-viral-kit — Ghidul de Viralitate Instagram 2026</title>
+
+<style>
+:root {
+  --ink: #1c1023;
+  --muted: #6b5f75;
+
+  --brand: #c13584;
+  --brand-deep: #833ab4;
+  --brand-ink: #3a1c52;
+  --brand-soft: #fdf1f7;
+  --grad: linear-gradient(135deg, #feda75 0%, #fa7e1e 30%, #d62976 62%, #962fbf 100%);
+
+  --accent: #fa7e1e;
+  --danger: #d94841;
+  --success: #168a68;
+
+  --surface: #ffffff;
+  --surface-alt: #faf7fb;
+  --line: #ece4f0;
+
+  --shadow: 0 18px 45px rgba(58, 28, 82, .14);
+  --radius: 16px;
+
+  --page-width: 210mm;
+  --page-height: 297mm;
+  --page-padding: 16mm;
+
+  --font: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --space-2xs: .4rem;
+  --space-xs: .65rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 2.75rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 1rem;
+  background: #efeaf1;
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
+}
+
+.toolbar { width: min(100%, var(--page-width)); margin: 0 auto 1rem; display: flex; gap: .5rem; justify-content: flex-end; }
+.toolbar button {
+  border: 0; border-radius: 999px; background: var(--brand); color: #fff;
+  padding: .65rem 1.1rem; font: 700 .78rem/1 var(--font); cursor: pointer;
+  box-shadow: 0 8px 18px rgba(214, 41, 118, .28);
+}
+.toolbar button:hover { background: var(--brand-ink); }
+
+.page {
+  width: min(100%, var(--page-width));
+  min-height: var(--page-height);
+  margin: 0 auto 1.25rem;
+  padding: var(--page-padding);
+  background: var(--surface);
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+}
+
+/* ---------- cover ---------- */
+.cover {
+  display: flex; flex-direction: column; justify-content: space-between;
+  background: linear-gradient(160deg, var(--brand-ink) 0%, #7c2259 55%, #c13584 125%);
+  color: #fff;
+  border-radius: 6px;
+}
+.cover .badge {
+  align-self: flex-start;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 999px;
+  padding: .35rem .8rem;
+  font: 700 .68rem/1 var(--font);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.cover h1 { margin: 1.2rem 0 .5rem; font-size: 2.35rem; line-height: 1.08; letter-spacing: -.02em; }
+.cover h1 .kit { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.cover .sub { margin: 0; max-width: 34em; font-size: 1.02rem; color: rgba(255,255,255,.88); }
+.cover .meta { display: flex; gap: 1.4rem; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,.25); padding-top: 1rem; font-size: .78rem; color: rgba(255,255,255,.75); }
+.cover .meta b { display: block; color: #fff; font-size: .9rem; }
+
+/* ---------- headings ---------- */
+h2 {
+  display: flex; align-items: baseline; gap: .6rem;
+  margin: 0 0 var(--space-md);
+  font-size: 1.42rem; line-height: 1.2; letter-spacing: -.01em;
+}
+h2 .no {
+  flex: none;
+  display: inline-grid; place-items: center;
+  width: 1.75rem; height: 1.75rem;
+  border-radius: 8px;
+  background: var(--grad);
+  color: #fff; font-size: .85rem; font-weight: 800;
+  transform: translateY(.15rem);
+}
+h3 { margin: var(--space-md) 0 var(--space-xs); font-size: 1.02rem; }
+p { margin: 0 0 var(--space-xs); }
+.page > p:last-child { margin-bottom: 0; }
+.small { font-size: .8rem; color: var(--muted); }
+b.lead { color: var(--brand-ink); }
+
+/* ---------- blocks ---------- */
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-sm); }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-sm); }
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: .8rem .95rem;
+  background: var(--surface);
+}
+.card h4 { margin: 0 0 .3rem; font-size: .88rem; }
+.card p { margin: 0; font-size: .82rem; }
+.card.alt { background: var(--surface-alt); }
+.card.hot { border-color: #f4c9dd; background: var(--brand-soft); }
+
+.note {
+  border-left: 4px solid var(--accent);
+  background: #fff7ef;
+  border-radius: 8px;
+  padding: .6rem .8rem;
+  font-size: .82rem;
+  margin: var(--space-xs) 0;
+}
+.note.blue { border-left-color: var(--brand-deep); background: #f6f2fd; }
+.note.danger { border-left-color: var(--danger); background: #fdf1f0; }
+.note.ok { border-left-color: var(--success); background: #eff8f4; }
+
+table { width: 100%; border-collapse: collapse; font-size: .8rem; margin: .4rem 0 var(--space-sm); }
+th {
+  text-align: left;
+  background: var(--brand-ink);
+  color: #fff;
+  font-size: .72rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+th, td { padding: .42rem .55rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:nth-child(even) td { background: var(--surface-alt); }
+td b { color: var(--brand-ink); }
+.t-good { color: var(--success); font-weight: 700; }
+.t-bad { color: var(--danger); font-weight: 700; }
+
+.chip {
+  display: inline-block;
+  background: var(--brand-soft);
+  border: 1px solid #f2cfe1;
+  color: var(--brand-ink);
+  border-radius: 999px;
+  padding: .18rem .6rem;
+  font: 700 .72rem/1.4 var(--font);
+  margin: 0 .25rem .3rem 0;
+}
+
+pre {
+  background: #241631;
+  color: #f3e8fa;
+  border-radius: 10px;
+  padding: .75rem .9rem;
+  font: 500 .78rem/1.55 ui-monospace, "Cascadia Code", Consolas, monospace;
+  overflow-x: auto;
+  margin: .4rem 0 var(--space-sm);
+  white-space: pre-wrap;
+}
+
+ul.tight { margin: .25rem 0 .6rem; padding-left: 1.15rem; }
+ul.tight li { margin-bottom: .25rem; font-size: .84rem; }
+
+.checklist { list-style: none; margin: .3rem 0 .6rem; padding: 0; }
+.checklist li {
+  position: relative;
+  padding: .3rem 0 .3rem 1.6rem;
+  font-size: .84rem;
+  border-bottom: 1px dashed var(--line);
+}
+.checklist li::before {
+  content: "";
+  position: absolute; left: 0; top: .42rem;
+  width: .95rem; height: .95rem;
+  border: 2px solid var(--brand);
+  border-radius: 4px;
+}
+
+.pillrow { display: flex; flex-wrap: wrap; gap: .4rem; margin: .4rem 0 .8rem; }
+
+/* phone mock for safe zones */
+.phone {
+  width: 200px; height: 356px;
+  margin: .3rem auto .6rem;
+  border: 3px solid var(--ink);
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  background: #f3edf6;
+}
+.phone .safe {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px; height: 267px;
+  border: 2px dashed var(--success);
+  background: rgba(22,138,104,.10);
+  display: grid; place-items: center;
+  font: 700 .62rem/1.2 var(--font);
+  color: var(--success);
+  text-align: center;
+}
+.phone .ui { position: absolute; font: 600 .55rem/1.2 var(--font); color: #fff; background: rgba(28,16,35,.75); border-radius: 5px; padding: .15rem .3rem; }
+.phone .ui.top { top: 6px; left: 50%; transform: translateX(-50%); }
+.phone .ui.right { right: 4px; top: 46%; }
+.phone .ui.bottom { bottom: 6px; left: 50%; transform: translateX(-50%); }
+
+footer.pagefoot {
+  margin-top: auto;
+  padding-top: .8rem;
+  border-top: 1px solid var(--line);
+  display: flex; justify-content: space-between;
+  font-size: .7rem; color: var(--muted);
+}
+.page { display: flex; flex-direction: column; }
+.page > .content { flex: 1; }
+
+@media print {
+  body { background: #fff; padding: 0; }
+  .toolbar { display: none; }
+  .page { box-shadow: none; margin: 0; border-radius: 0; min-height: auto; page-break-after: always; }
+  .cover { min-height: var(--page-height); }
+  @page { size: A4; margin: 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar"><button onclick="window.print()">Printează / salvează PDF</button></div>
+
+<!-- ================= COVER ================= -->
+<section class="page cover">
+  <div>
+    <span class="badge">Kit · Instagram · 2026</span>
+    <h1>instagram-viral-kit<br><span class="kit">Ghidul de Viralitate Instagram</span></h1>
+    <p class="sub">Tot ce trebuie să știi ca să faci <b>postări și Reels virale pe Instagram în 2026</b>:
+    algoritmul interest-space, metricile care decid distribuția, setup-ul tehnic obligatoriu,
+    SEO, hook-uri gata de copiat, carusele, hack-uri (Trial Reels, Comment-to-DM) și planul de 30 de zile.</p>
+  </div>
+  <div>
+    <div class="pillrow">
+      <span class="chip" style="background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.35);color:#fff;">Reels</span>
+      <span class="chip" style="background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.35);color:#fff;">Carusele</span>
+      <span class="chip" style="background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.35);color:#fff;">SEO Instagram</span>
+      <span class="chip" style="background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.35);color:#fff;">Trial Reels</span>
+      <span class="chip" style="background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.35);color:#fff;">Comment-to-DM</span>
+      <span class="chip" style="background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.35);color:#fff;">Plan 30 zile</span>
+    </div>
+    <div class="meta">
+      <div><b>v1.2.1</b>octombrie 2026</div>
+      <div><b>Surse</b>brief v2 (40 resurse) + corpus 2026 (20 surse, T1/T2/T3)</div>
+      <div><b>Limbă</b>RO (portabil în orice limbă)</div>
+      <div><b>Prag de livrare</b>audit ≥ 85/100</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 1. ALGORITMUL ================= -->
+<section class="page">
+  <div class="content">
+    <h2><span class="no">1</span>Algoritmul Instagram în 2026</h2>
+
+    <div class="grid2">
+      <div class="card alt">
+        <h4>Interest graph, nu social graph</h4>
+        <p>Conținutul e distribuit pe <b>spații de interes</b>, nu pe followeri. Fiecare postare
+        pleacă de la zero: un cont de 800 poate bate unul de 50k. <b>Nisa clară e obligatorie</b> —
+        algoritmul clasifică după ce postezi, nu după ce intenționezi.</p>
+      </div>
+      <div class="card alt">
+        <h4>Distribuție în valuri</h4>
+        <p>Mecanism oficial: postarea e arătată unei <b>mici audiențe de test</b>, iar dacă
+        metricile trec, e extinsă <b>în valuri succesive</b> tot mai mari. Fiecare val se câștigă
+        în primele secunde.</p>
+      </div>
+      <div class="card alt">
+        <h4>„Views" = moneda unică</h4>
+        <p>Din aug. 2024, Views e metrica primară pe tot Instagram (Reels, foto, carusele,
+        Stories). Creșterea reach-ului = creșterea views + raportul followeri/non-followeri
+        îți arată dacă ești în distribuție.</p>
+      </div>
+      <div class="card hot">
+        <h4>Semnalele de ranking (Mosseri)</h4>
+        <p>1. <b>Watch time / retenție</b> · 2. <b>Sends per reach</b> (share-uri în DM — semnalul
+        suprem pentru non-followeri) · 3. <b>Likes per reach</b> · apoi comentarii, saves, follows.
+        Media watch time 2026: <b>~8,5 secunde</b> per Reel (Metricool).</p>
+      </div>
+    </div>
+
+    <h3>Regulile de originalitate (hard gate 2026)</h3>
+    <table>
+      <tr><th>Regulă oficială</th><th>Consecință</th></tr>
+      <tr><td><b>10+ postări „ale altora" în 30 de zile</b> fără transformare semnificativă</td><td class="t-bad">Contul devine NEELIGIBIL pentru recomandări (Explore/Reels)</td></tr>
+      <tr><td><b>Conținut duplicat</b> — la repost primește doar originalul recomandări</td><td class="t-bad">Repost-ul e etichetat; agregatoarele scoase din recomandări</td></tr>
+      <tr><td><b>Watermark TikTok</b> / alte platforme</td><td class="t-bad">Deprioritare în recomandări</td></tr>
+      <tr><td>Meme, parodii, compilații transformate, reacții cu voiceover propriu</td><td class="t-good">Excepții tolerate</td></tr>
+    </table>
+
+    <div class="note danger"><b>Regulile s-au extins în 2026</b> dincolo de Reels — la <b>fotografii și carusele</b>.
+    Recrezi în vocea ta, nu copiezi. Repararea se face prin Account Status.</div>
+
+    <h3>Mituri care nu mai funcționează</h3>
+    <table>
+      <tr><th>Mit</th><th>Realitatea 2026</th></tr>
+      <tr><td>„Postez la ora magică și devin viral"</td><td>Timing-ul are efect minor; în interest graph contează retenția și sends. Ora = când e activă audiența TA (Insights).</td></tr>
+      <tr><td>„30 de hashtag-uri = reach"</td><td>Hashtag-urile = categorizare/căutare, NU reach. Limita oficială recomandată: <b>max ~5</b> (dec. 2025). 3–5 relevante.</td></tr>
+      <tr><td>„Meta Verified îți dă reach"</td><td>Teste independente (Buffer 2025): fără boost real. Legitimitate + suport, nu pârghie.</td></tr>
+      <tr><td>„Followerii aduc viralitate"</td><td>Followerii = baza inițială. Distribuția vine din metrici per reach.</td></tr>
+    </table>
+  </div>
+  <footer class="pagefoot"><span>instagram-viral-kit · Ghid vizual</span><span>1 / 9</span></footer>
+</section>
+
+<!-- ================= 2. METRICI ================= -->
+<section class="page">
+  <div class="content">
+    <h2><span class="no">2</span>Metricile critice și țintele</h2>
+
+    <div class="card hot" style="margin-bottom:var(--space-sm)">
+      <h4>Funnel-ul unui Reel — fiecare etapă filtrează următoarea</h4>
+      <p style="font-size:.86rem"><b>Impresii</b> → <b>Vizionări 3s</b> (hook rate) → <b>Retenție</b> (watch time) →
+      <b>Completare</b> → <b>Sends, comments, saves</b> → <b>Follows</b> → views noi (buclă).
+      Diagnosticul citează funnel-ul în ordine și repară PRIMA etapă stricată.</p>
+    </div>
+
+    <table>
+      <tr><th>Metrică</th><th>Țintă de lucru</th><th>Sursă</th></tr>
+      <tr><td><b>Hook rate</b> (vizionări &gt;3s / impresii)</td><td><b>≥ 25–35% sănătos · 40%+ elite</b></td><td>benchmark public; metrică oficială „view rate / skip rate" în Insights din aug. 2025</td></tr>
+      <tr><td><b>Watch time mediu</b></td><td><b>&gt; 8,5s</b> (media 2026)</td><td>Metricool IG Study 2026 (24,4M postări)</td></tr>
+      <tr><td><b>Completion rate</b></td><td>clipuri &lt;30s: ≥65% · 30–60s: ≥50%</td><td>heuristica kitului (din brief)</td></tr>
+      <tr><td><b>Sends / views</b> (share-uri DM)</td><td>1 send / 100–200 views</td><td>heuristica kitului; semnal confirmat de Mosseri</td></tr>
+      <tr><td><b>Saves / views</b></td><td>1 save / 50–100 views</td><td>heuristica kitului</td></tr>
+      <tr><td><b>Comentarii / 1k views</b></td><td>15–30+</td><td>heuristica kitului</td></tr>
+      <tr><td><b>Engagement rate</b></td><td>media 2026 ≈ 0,45% · carusele 0,55% (top) · Reels 0,52% · imagini 0,37%</td><td>Socialinsider 2026 (15M postări)</td></tr>
+      <tr><td><b>Reach rate Reels</b></td><td>~9,8% din followers pe conturi mici = sănătos; 30–60s = reach maxim (5,60%)</td><td>Clouted 2026 · Socialinsider</td></tr>
+    </table>
+
+    <div class="note"><b>Cifrele „heuristica kitului" nu sunt benchmarks oficiale</b> — nu există publicate.
+    Sunt ținte de lucru extrase din brief-ul v2 (40 resurse). Le folosești pentru decizii tactice,
+    nu le citezi ca fapte publicate.</div>
+
+    <h3>Regula de citire a raportului followeri / non-followeri</h3>
+    <div class="grid2">
+      <div class="card">
+        <h4 class="t-good">Majoritate non-followeri</h4>
+        <p>Algoritmul te distribuie activ — ești în jocul viralității. Scalezi formatul.</p>
+      </div>
+      <div class="card">
+        <h4 class="t-bad">90%+ views de la followeri</h4>
+        <p>Conținutul e doar „servit" bazei existente: nisa neclară, conținut generic sau
+        originalitate compromisă. Zero top-funnel.</p>
+      </div>
+    </div>
+  </div>
+  <footer class="pagefoot"><span>instagram-viral-kit · Ghid vizual</span><span>2 / 9</span></footer>
+</section>
+
+<!-- ================= 3. SETUP ================= -->
+<section class="page">
+  <div class="content">
+    <h2><span class="no">3</span>Setup-ul tehnic obligatoriu (7 puncte)</h2>
+    <p>Setările pot bloca viralitatea înainte de prima postare. Toate trebuie PAS înainte de a produce conținut.</p>
+
+    <ul class="checklist">
+      <li><b>Cont profesionist</b> (Creator/Business) — insights, Trial Reels, indexare Google. Gratuit.</li>
+      <li><b>Media quality:</b> Settings → Media quality → <b>Upload at highest quality = ON</b>, date saver OFF.</li>
+      <li><b>Indexare motoare de căutare:</b> „Allow public photos and videos to appear in search engine results" = ON.
+          Din <b>10 iulie 2025</b> Google/Bing indexează conturile profesionale — postările tale devin suprafață de căutare.</li>
+      <li><b>Account Status:</b> Settings → Account Status. Aici apare shadowban-ul real
+          („neeligibil pentru recomandări") + appeal. <b>Orice roșu aici = blocant P0.</b></li>
+      <li><b>Traduceri:</b> Language and translations ON + dubbing AI „Translate voices with Meta AI" la publicare
+          (EN/ES, extins 2026 cu JP/KO/FR/DE/IT + lip-sync; 1.000+ followeri).</li>
+      <li><b>Bio SEO:</b> Name field cu keyword („Ana | Nutriție pentru mame") + valoare + dovadă + CTA/link.</li>
+      <li><b>Nisa în fapte:</b> ultimele 9 postări în aceeași temă.</li>
+    </ul>
+
+    <h3>Instagram SEO 2026 — unde trăiesc cuvintele-cheie</h3>
+    <table>
+      <tr><th>Loc</th><th>Impact</th><th>Cum</th></tr>
+      <tr><td><b>Name field</b></td><td class="t-good">cel mai mare</td><td>„[Nume] | [Keyword principal]" — îți dă găsirea în căutarea internă</td></tr>
+      <tr><td><b>Bio</b></td><td>mare</td><td>keyword-uri + valoare + CTA; indexată și în Google</td></tr>
+      <tr><td><b>Caption</b></td><td>mare</td><td>keyword natural în primele ~125 caractere (vizibile în feed)</td></tr>
+      <tr><td><b>Cuvinte rostite + text-on-screen</b></td><td>medie</td><td>Instagram transcrie Reels (declarație Mosseri)</td></tr>
+      <tr><td><b>Hashtag-uri</b></td><td>mica</td><td>3–5 relevante, max ~5 oficial; doar categorizare, zero reach</td></tr>
+    </table>
+
+    <h3>Formula de bio</h3>
+<pre>[Nume] | [Keyword-ul principal]
+[Ce primește followerul, concret — 1 linie]
+[Prova/diferența — cifre dacă ai]
+[CTA + link: „Ghid gratuit ↓" / DM „KIT"]</pre>
+
+    <div class="note blue"><b>De la iulie 2025, caption-urile tale sunt pagini web.</b> Scrie propoziții complete
+    cu keyword-ul subiectului — postările pot apărea în rezultate Google și pot fi citate de motoare AI
+    (ChatGPT, Gemini).</div>
+  </div>
+  <footer class="pagefoot"><span>instagram-viral-kit · Ghid vizual</span><span>3 / 9</span></footer>
+</section>
+
+<!-- ================= 4. REEL-UL VIRAL ================= -->
+<section class="page">
+  <div class="content">
+    <h2><span class="no">4</span>Anatomia Reel-ului viral</h2>
+
+    <h3>Primele 3 secunde — Triple Hook Layering (3+1 straturi sincronizate)</h3>
+    <table>
+      <tr><th>Strat</th><th>Regulă</th></tr>
+      <tr><td><b>Vizual</b></td><td>mișcare bruscă, recuzită, unghi, mid-motion start — înțeles fără sunet</td></tr>
+      <tr><td><b>Verbal</b></td><td><b>5–8 cuvinte</b> (Regula 5-8-5), nivel „clasa a 5-a", declarație — NU intro</td></tr>
+      <tr><td><b>Text-on-screen</b></td><td>1–3 cuvinte de impact, mare, contrastant, lizibil în prima secundă</td></tr>
+      <tr><td><b>Auditiv</b></td><td>whoosh / pauză totală / schimbare de ritm — pattern interrupt real</td></tr>
+    </table>
+
+    <div class="grid2">
+      <div class="note danger"><b>Testul mut:</b> oprește sunetul — vizual + text-on-screen trebuie să
+      transmită ideea singure (80%+ privesc fără sonor). Picat = P1.</div>
+      <div class="note danger"><b>Fără delay:</b> zero „Bună guys, welcome back!". Subiectul e în secunda 1.
+      Hook-ul e o promisiune pe care corpul o plătește.</div>
+    </div>
+
+    <h3>Șablon de pacing — primele 15 secunde</h3>
+    <table>
+      <tr><th>Interval</th><th>Script vorbit</th><th>Schimbare vizuală</th><th>Audio</th></tr>
+      <tr><td>0:00–0:03</td><td>Hook verbal (5–8 cuvinte)</td><td>cadru strâns + text mare</td><td>whoosh / alertă</td></tr>
+      <tr><td>0:03–0:06</td><td>identificarea problemei</td><td>jump-zoom pe față</td><td>tăcere scurtă</td></tr>
+      <tr><td>0:06–0:09</td><td>agitare + open loop</td><td>b-roll / grafică</td><td>pop SFX</td></tr>
+      <tr><td>0:09–0:12</td><td>soluția 1</td><td>A-roll + subtitrare galbenă</td><td>muzică volum mic</td></tr>
+      <tr><td>0:12–0:15</td><td>soluția 2</td><td>schimbare unghi / zoom out</td><td>SFX pe cuvânt-cheie</td></tr>
+    </table>
+    <p class="small"><b>Attention Reset la fiecare 2–3,5 secunde.</b> Regula 95/5: 95% valoare, max 5% vânzare.
+    Durata = timpul minim al promisiunii (sweet spot 2026: 30–60s pentru reach; boost plătit doar ≤90s).</p>
+
+    <h3>Safe zones (1080×1920)</h3>
+    <div style="display:flex;gap:var(--space-md);align-items:flex-start">
+      <div class="phone">
+        <span class="ui top">UI sus ~220–270px</span>
+        <span class="ui right">butoane<br>dreapta ~250px</span>
+        <span class="ui bottom">caption jos ~300–350px</span>
+        <div class="safe">ZONA SIGURĂ<br>centru 1080×1440 (3:4)<br>= ce se vede în grid</div>
+      </div>
+      <div>
+        <ul class="tight">
+          <li><b>Sus:</b> ~220–270px = header/audio.</li>
+          <li><b>Jos:</b> ~300–350px = caption + bară.</li>
+          <li><b>Dreapta:</b> ~250px = butoane like/comment/send.</li>
+          <li><b>Grila profilului e dreptunghiulară (3:4)</b> din 2025 — thumbnail-ul taie ~240px sus/jos: titlul cover-ului în centru.</li>
+          <li>Export: 1080×1920, MP4 H.264, min 30fps, din <b>Edits</b> (Meta, gratuit, fără watermark).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer class="pagefoot"><span>instagram-viral-kit · Ghid vizual</span><span>4 / 9</span></footer>
+</section>
+
+<!-- ================= 5. HOOK-URI + CAPTION ================= -->
+<section class="page">
+  <div class="content">
+    <h2><span class="no">5</span>Hook-uri ready-to-use + caption</h2>
+
+    <table>
+      <tr><th>Categorie</th><th>Șablon (copiază-l)</th><th>Psihologia</th></tr>
+      <tr><td><b>Desire-Based</b> (trecut)</td><td>„Am luat o pauză de o lună de la postat și tot am crescut cu 11.000 de urmăritori. Iată exact ce am făcut."</td><td>rezultat dorit, dovadă vie</td></tr>
+      <tr><td><b>Desire-Based</b> (viitor)</td><td>„Dacă ar trebui să o iau de la 0 pe Instagram, iată exact cele 3 etape prin care aș ajunge la 10k."</td><td>proiecție accesibilă</td></tr>
+      <tr><td><b>Desire-Based</b> (direct)</td><td>„Dacă vrei să devii mai bun la crearea de conținut, acest truc simplu îți economisește 10 ore pe săptămână."</td><td>apel „tu" pe durere</td></tr>
+      <tr><td><b>Negative Hook</b></td><td>„Oprește-te din a mai folosi [Metoda X]! Îți distrugi acoperirea pe Reels fără să-ți dai seama."</td><td>loss aversion</td></tr>
+      <tr><td><b>Curiosity Gap</b></td><td>„Acest truc pe Instagram pare ilegal de știut... dar îți dublează comentariile în 24 de ore."</td><td>buclă de închis</td></tr>
+      <tr><td><b>Pattern Interrupt</b></td><td>text de impact + mișcare bruscă spre cameră / obiect pe masă</td><td>disrupția pilotului automat</td></tr>
+    </table>
+    <p class="small">Extensii: Contrarian, Number-Led (cifre exacte &gt; cifre rotunde), Audience Callout,
+    Story Open (in medias res), Industry Shock („90% din nișă te mint..."). Într-un pachet: min. 3 structuri diferite.</p>
+
+    <h3>Structura caption-ului</h3>
+<pre>[LINIA 1–2: hook scris — ~125 caractere vizibile în feed] ← bugetul dur
+[linia de reîncadrare — întărește promisiunea]
+[valoare în buline/paragrafe scurte + întrebări pe tot textul]
+[keyword natural integrat — SEO intern + Google din iulie 2025]
+[CTA unic pe schimb de valoare: „Comentează KIT → ghid în DM"]
+[3–5 hashtag-uri relevante — max ~5 oficial]</pre>
+
+    <h3>CTA-ul care produce comentarii</h3>
+    <ul class="tight">
+      <li><b>Schimb de valoare, nu cerșit:</b> „Comentează CUVÂNT și primești X în DM" &gt; „dă follow".</li>
+      <li><b>Stratificat pe 3 straturi:</b> text-on-screen + mențiune verbală la final + detalii în caption.</li>
+      <li><b>Opiniile creează tabere, faptele nu</b> — subiectivism moderat produce comentarii.</li>
+      <li><b>Tehnica găurii:</b> omiterea intenționată a unui detaliu evident — audiența vine să corecteze.</li>
+    </ul>
+  </div>
+  <footer class="pagefoot"><span>instagram-viral-kit · Ghid vizual</span><span>5 / 9</span></footer>
+</section>
+
+<!-- ================= 6. FORMATE + HACK-URI ================= -->
+<section class="page">
+  <div class="content">
+    <h2><span class="no">6</span>Formatele 2026 + hack-urile avansate</h2>
+
+    <div class="grid2">
+      <div class="card"><h4>Reels — motorul de reach</h4><p>Reach rate ~9,8% din followers pe conturi mici;
+      2,25× reach vs imagine. Rol: audiențe noi. 30–60s = reach maxim.</p></div>
+      <div class="card"><h4>Carusele — motorul de saves</h4><p>Max 20 slide-uri, 1080×1350 (4:5). ER 0,55% —
+      cel mai mare format. Slide 1 = hook, slide de referință = saves, slide final = CTA.
+      <span class="small">(Claim-ul „reach +89%" din brief e neconfirmat public.)</span></p></div>
+      <div class="card"><h4>Stories — motorul de relație</h4><p>1080×1920, 60s/card. NU fac viralitatea —
+      țin audiența caldă și produc DM-uri. 2–10/zi pentru conturi active.</p></div>
+      <div class="card"><h4>Postări text/foto — motorul de opinie</h4><p>Hook-ul în prima linie + poză.
+      6 tipuri de hook text: Poza, Ceva familiar, Contrastul, Întrebările, Setarea scenei, Știrea.
+      Detalii concrete obligatorii.</p></div>
+    </div>
+
+    <h3>Piramida conținutului</h3>
+<pre>        [Stories zilnice — relație]
+      [Carusele 2–4/lună — saves, autoritate]
+    [Reels 2–3/săptămână — reach, top-funnel]
+  [Postare opinie/foto 1–2/lună — brand personal]</pre>
+    <p class="small">Baseline Meta: 3–5 postări/săptămână. Buffer 2025: mai multe postări = reach total mai mare,
+    fără plafon — dar <b>consistența bate maratonul</b>. Timing general: mar–mie 9–11 (Sprout 2025); prioritate:
+    Insights-ul propriu.</p>
+
+    <h3>Hack-urile 2026</h3>
+    <table>
+      <tr><th>Hack</th><th>Cum funcționează (corect)</th></tr>
+      <tr><td><b>Trial Reels</b></td><td>Publici cu „Trial" → test <b>doar pe non-followeri</b> → insights în ~24h →
+      decizia TA de „Share to everyone". ⚠️ Nu e automat! Cont public, 1.000+ followeri (din iul. 2025).</td></tr>
+      <tr><td><b>Triple Double</b></td><td>Variante, NU duplicate: oglindește orizontal, viteza ±5%, textul primului cadru.
+      ⚠️ 10+ „duplicate" în 30 zile = pierzi recomandările — variație, nu spam.</td></tr>
+      <tr><td><b>Comment-to-DM</b></td><td>ManyChat (Meta Business Partner, API oficial — compliant): keyword în comentarii →
+      DM automat. Riscul e abuzul: rate-limit pe virale, primul DM = exact promisiunea. Plan Pro ~$10–15/lună.</td></tr>
+      <tr><td><b>Serii & binge</b></td><td>Open loop-uri „partea 2 mâine" → follow-ul vine din serie. Formatul câștigător →
+      producție în loturi, variind hook-ul, nu formatul. 2026: funcția „Series" (hub episodic, „Watch Next").</td></tr>
+      <tr><td><b>Collab & Blend</b></td><td>Collab post = reach dublat pe audiențe complementare. Blend = feed partajat
+      de Reels în DM-uri — distribuție secundară.</td></tr>
+    </table>
+  </div>
+  <footer class="pagefoot"><span>instagram-viral-kit · Ghid vizual</span><span>6 / 9</span></footer>
+</section>
+
+<!-- ================= 7. DIAGNOSTIC + PLAN ================= -->
+<section class="page">
+  <div class="content">
+    <h2><span class="no">7</span>Diagnostic post-publicare + planul de 30 de zile</h2>
+
+    <h3>Tabelul de diagnostic (citează funnel-ul în ordine, repară PRIMA etapă stricată)</h3>
+    <table>
+      <tr><th>Metrică sub țintă</th><th>Diagnostic</th><th>Acțiune</th></tr>
+      <tr><td>Hook rate &lt; 25% (skip mare)</td><td>hook-ul n-a oprit scroll-ul</td><td><b>Hook Swap</b> ↓</td></tr>
+      <tr><td>Retenție prăbușită la 3–10s</td><td>promisiunea nu se plătește</td><td>rescrie deschiderea corpului; dead air tăiat</td></tr>
+      <tr><td>Completion sub țintă</td><td>pacing lent / clip lung</td><td>taie pauze, 1,1×, scurtează</td></tr>
+      <tr><td>Sends sub 1/200 views</td><td>lipsă identificare/statut</td><td>CTA de identitate („trimite-i lui X")</td></tr>
+      <tr><td>Saves sub 1/100 views</td><td>conținut consumabil</td><td>transformă în material de revenit (checklist, carusel)</td></tr>
+      <tr><td>Comentarii sub 15/1k views</td><td>fapt rece, nu opinie</td><td>tehnica găurii / opinie moderată</td></tr>
+      <tr><td>Views 90%+ followeri</td><td>nu ești în distribuție de interes</td><td>nisa neclară / conținut generic / originalitate</td></tr>
+      <tr><td>Toate OK, reach mort</td><td>problemă de cont</td><td>Mod SETUP — Account Status (P0)</td></tr>
+    </table>
+
+    <div class="note ok"><b>Protocolul Hook Swap:</b> retenție bună după secunda 3, dar skip mare →
+    NU ștergi clipul · tai primele 3 secunde · hook nou pe 4 straturi (Contrarian / Industry Shock) ·
+    republiezi după 3 zile. Hook-ul e piesă replaceable; corpul de valoare, nu.</div>
+
+    <h3>Planul „Best of Nine" — 30 de zile</h3>
+    <table>
+      <tr><th>Săptămână</th><th>Focalizare</th><th>Acțiuni</th></tr>
+      <tr><td><b>1</b></td><td>Setare & Cercetare</td><td>Setup 7 puncte PASS · o singură nișă · folderul
+      <b>„Content Pool"</b> cu 20+ Reels virale din nișă (cu notițe: hook, durată, retenție, CTA) · 3 content pillars</td></tr>
+      <tr><td><b>2</b></td><td>Testing — cele 9 formate</td><td>3 formate dovedite, recreate în vocea ta, postate
+      de 3 ori fiecare (total 9), rotind hook-urile · Trial Reels pentru experimentale · mar–mie 9–11</td></tr>
+      <tr><td><b>3–4</b></td><td>Scale & Binge</td><td>Analizezi funnel-ul pe toate 9 · formatul câștigător (watch time +
+      sends) → dublezi producția pe el, variind hook-ul · deschizi o serie · activezi Comment-to-DM</td></tr>
+    </table>
+    <p class="small"><b>Metrica de succes a lunii:</b> un Reel în valul 2+ de distribuție (majoritate non-followeri)
+    sau 1 format validat cu watch time &gt; 8,5s.</p>
+
+    <h3>Anti-pattern-urile care resping livrabilul</h3>
+    <div class="pillrow">
+      <span class="chip">Intro teleshopping</span><span class="chip">Hook doar cu sunet</span>
+      <span class="chip">Watermark TikTok</span><span class="chip">Repost masiv</span>
+      <span class="chip">Clickbait fără plată</span><span class="chip">Text în afara safe zone</span>
+      <span class="chip">30 de hashtag-uri</span><span class="chip">CTA doar „dă follow"</span>
+      <span class="chip">2 idei într-un hook</span><span class="chip">Nisa neclară</span>
+      <span class="chip">Ofertă în primele secunde</span><span class="chip">Cifre inventate</span>
+    </div>
+
+    <div class="note blue"><b>Auditul kitului (0–100, prag 85):</b> Hook & scroll-stop 25 · Retenție & structură 20 ·
+    Discoverability 20 · Complianță & originalitate 15 · CTA & buclă de creștere 20.</div>
+
+    <p class="small"><b>Verificat mecanic (v1.2.1):</b> un <code>hook_swap</code> fără 3 hook-uri noi,
+    în buget 5-8-5, nu trece validarea. Exemplu complet în <code>examples/exemplu-diagnostic.md</code>,
+    fixturi în <code>examples/proba-diagnostic/</code>, runner: <code>python tools/run_tests.py</code>.</p>
+  </div>
+  <footer class="pagefoot"><span>instagram-viral-kit · v1.2.1 · 2026-10-15</span><span>7 / 9</span></footer>
+</section>
+
+<!-- ================= 8. CROSS-PLATFORM + LIMBI ================= -->
+<section class="page">
+  <div class="content">
+    <h2><span class="no">8</span>Cross-platform (TikTok / Shorts) + limbi și piețe</h2>
+
+    <div class="note ok"><b>Regula de aur:</b> filmezi o dată, exportezi master curat fără watermark,
+    editezi nativ per platformă. Niciodată repost identic (duplicatul e detectat; YouTube
+    demonetizează conținutul mass-produced).</div>
+
+    <h3>Tabelul de adaptare per platformă</h3>
+    <table>
+      <tr><th>Element</th><th>Instagram Reels</th><th>TikTok</th><th>YouTube Shorts</th></tr>
+      <tr><td><b>Lungime țintă</b></td><td>30–60s (reach)</td><td><b>21–34s</b></td><td>20–60s (max 3 min)</td></tr>
+      <tr><td><b>Pragul platformei</b></td><td>hook rate ≥25–35%</td><td>completion + <b>rewatch</b></td><td><b>„Viewed vs. Swiped Away" ≥70%</b></td></tr>
+      <tr><td><b>SEO</b></td><td>keyword în caption + text</td><td><b>caption + text + audio vorbit</b> (86% din Gen Z caută săptămânal)</td><td>titlu + descriere + speech</td></tr>
+      <tr><td><b>Trenduri/sunete</b></td><td>secundar</td><td><b>remix trend prin nișă</b>, nu copiere</td><td>secundar</td></tr>
+      <tr><td><b>Comentarii</b></td><td>~20/video</td><td><b>~50/video</b> — opinia câștigă</td><td>~10/video — volum</td></tr>
+      <tr><td><b>CTA preferat</b></td><td>keyword DM (ManyChat)</td><td>comentariu + follow</td><td>abonare + serie/playlist</td></tr>
+    </table>
+    <p class="small">Watermark: penalizare <b>confirmată</b> pe Instagram (TikTok watermark); pe TikTok/YouTube
+    neconfirmat oficial, dar semnalează conținut reciclat. Lansare eșalonată 24–72h între platforme,
+    nu simultan.</p>
+
+    <h3>Pachetul multi-canal (handoff hook-kit)</h3>
+    <pre>ADN (o propoziție + structura hook-ului + pilon)
+├── Instagram Reel (reel-builder)           ziua 0
+├── Carusel / postare opinie (post-builder) ziua 1–2
+├── TikTok (short-video-adapter)            ziua 2–3
+├── YouTube Shorts (short-video-adapter)    ziua 3–4
+└── Meta Ads → hook-kit (brief de transfer) ziua 4–7, doar dacă organicul a validat
+SCALE: canalul câștigător primește 2–3 variante din același ADN</pre>
+
+    <h3>Limbi și piețe — matricea de calibrare (ghid §16)</h3>
+    <table>
+      <tr><th>Limbă / piață</th><th>Hook verbal</th><th>Notă de piață</th></tr>
+      <tr><td><b>RO</b></td><td>5–8 cuvinte</td><td>piață mică — teme universale aproape obligatorii; dovadă locală (lei, localități)</td></tr>
+      <tr><td><b>EN</b></td><td>5–8 cuvinte</td><td>nișe pure OK — piața suportă specializarea; VoC per piață (US ≠ UK)</td></tr>
+      <tr><td><b>DE</b></td><td><b>4–6 cuvinte</b> (compuse lungi)</td><td>precizie + dovadă tehnică &gt; hype; zero superlative americane</td></tr>
+      <tr><td><b>FR / IT / ES</b></td><td>5–8 cuvinte</td><td>emoție &gt; cifre seci; programul zilnic diferă — Insights locale</td></tr>
+      <tr><td><b>JP / KO</b></td><td>3–6 cuvinte</td><td>cortezie formală; dubbing Meta AI suportă JP/KO din 2026</td></tr>
+    </table>
+    <div class="note"><b>Scrii nativ în limba țintă, NU traduci din RO.</b> VoC-ul trebuie să existe în limba
+    pieței (altfel NEVOIE_RESEARCH). Bugetele de caractere rămân (prag device-based).</div>
+  </div>
+  <footer class="pagefoot"><span>instagram-viral-kit · v1.2.1 · 2026-10-15</span><span>8 / 9</span></footer>
+</section>
+
+
+<!-- ================= 9. CORPUS 2026 ================= -->
+<section class="page">
+  <div class="content">
+    <h2><span class="no">9</span>Corpus 2026 — ce e verificat, ce e practician</h2>
+
+    <div class="note blue"><b>Regula de aur:</b> nicio cifră nu intră în kit fără nivel de proveniență.
+    <b>T1 (oficial)</b> &gt; <b>T2 (studiu)</b> &gt; <b>T3 (practician)</b>; ce nu are sursă =
+    NEVOIE_RESEARCH. Dossierul complet: <code>knowledge/corpus-2026.md</code>.</div>
+
+    <h3>Cele 20 de surse analizate (oct. 2026)</h3>
+    <table>
+      <tr><th>Tier</th><th>Surse</th><th>Cum se livrează</th></tr>
+      <tr><td><b>T1 — oficial</b></td><td>Mosseri (watch time / likes / sends, connected vs. unconnected reach) · Creators blog (Trial Reels, Reels ≤3 min) · plafon 5 hashtag-uri</td><td class="t-good">„Instagram spune că…"</td></tr>
+      <tr><td><b>T2 — studiu</b></td><td>Metricool Research Study 2026 (24,36M postări / 375k conturi) + Socialinsider, Buffer, Sprout</td><td class="t-good">„studiu Metricool 2026: …"</td></tr>
+      <tr><td><b>T3 — practician</b></td><td>10 articole de bloguri/agenții (SocialPilot, Hootsuite, PostEverywhere, Aurelius, Deftsoft, Maya, Pictame, True Future, UseFastlane) + 6 clipuri citibile (Brock Johnson, Enrico Incarnati, HubSpot, Metricool, …)</td><td class="t-bad">„recomandare de practician (corpus 2026)" — tactică, nu benchmark</td></tr>
+      <tr><td><b>R — respins</b></td><td>7 surse fără conținut verificabil (corp de text/transcript indisponibil, un link YouTube incomplet) + cifre fără metodă</td><td class="t-bad">nu intră în ghid</td></tr>
+    </table>
+
+    <h3>Ce a intrat în kit (v1.2.0)</h3>
+    <div class="grid2">
+      <div class="card hot">
+        <h4>Skip rate = semnal negativ</h4>
+        <p>Peste <b>~40%</b> skip în primele secunde → intro de reparat; 20–35% e interval normal.
+        Localizezi problema pe care o ascundea medie bună.</p>
+      </div>
+      <div class="card alt">
+        <h4>Ținte de practician per Reel</h4>
+        <p>Completion <b>≥70%</b> la clipuri &lt;15s · share rate <b>0,5–2%</b> · save rate
+        <b>1–3%</b> · watch time mediu 70%+. Marcate T3, secundare heuristicii kitului.</p>
+      </div>
+      <div class="card alt">
+        <h4>Scorecard pe 6 rate-uri</h4>
+        <p>Skip → share → like → save → <b>repost</b> → comment rate. Primul rate mort dă reparația.
+        Repost rate ≈ 0 = conținut fără valoare de identitate.</p>
+      </div>
+      <div class="card alt">
+        <h4>Viralitate relativă</h4>
+        <p>Viral pentru contul tău = <b>~7,5× reach față de followeri</b> sau <b>~40× media de views</b>
+        (conturi mari: prag absolut ~1M). Măsori, nu promiți.</p>
+      </div>
+      <div class="card alt">
+        <h4>Reach conectat vs. neconectat</h4>
+        <p><b>Conectat</b> (followeri) → likes per reach, comunitate, serii. <b>Neconectat</b>
+        (non-followeri) → sends, hook, shareability. Cont nou: ~70% din efort pe neconectat.</p>
+      </div>
+      <div class="card alt">
+        <h4>Pârghii secundare T3 (ghid §9.6)</h4>
+        <p>Audio trending în 24–72h · 3–5 content pillars · mix 60/25/15 · regula 5-3-1 ·
+        batch filming 2–3h → 4–5 Reels · postări noi în 1–2 zile după un viral.</p>
+      </div>
+    </div>
+
+    <h3>Ce a fost respins (și de ce)</h3>
+    <table>
+      <tr><th>Afirmație respinsă</th><th>Motivul</th></tr>
+      <tr><td>Ponderi exacte de semnale (watch time 35% / shares 25% / saves 20% / …)</td><td>fără metodă publicată; nicio sursă oficială nu publică ponderi de ranking</td></tr>
+      <tr><td>„Audio trending = +200–300% reach"</td><td>cifră fără studiu — sunetul rămâne tactică, nu multiplicator garantat</td></tr>
+      <tr><td>Tabele de ore valabile „global"</td><td>contrazic regula kitului: ora optimă vine din Insights-ul propriu</td></tr>
+      <tr><td>„Reels &gt;3 min nu mai sunt eligibile din 2026"</td><td>confuzie de dată: regula de 3 min e oficială din 21 ian. 2025</td></tr>
+      <tr><td>„10+ postări/săptămână = randamente descrescătoare"</td><td>contrazice studiul Buffer (T2): volumul crește reach-ul total; consistența bate maratonul</td></tr>
+      <tr><td>„Originality Score" (funcție numită)</td><td>numele nu apare în nicio sursă oficială</td></tr>
+    </table>
+
+    <div class="note ok"><b>Trial Reels — corecția T1:</b> insights în ~24h, iar partajarea către toți
+    poate fi manuală („Share to everyone") <b>sau automată</b> — Instagram decide pe baza performanței
+    din primele <b>72 de ore</b>. Nota veche „72h neconfirmat" a fost retrasă.</div>
+  </div>
+  <footer class="pagefoot"><span>instagram-viral-kit · v1.2.1 · 2026-10-15</span><span>9 / 9</span></footer>
+</section>
+
+</body>
+</html>

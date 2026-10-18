@@ -1,0 +1,104 @@
+{
+  "$comment": "TEMPLATE DE BRIEF — instagram-viral-kit v1.0.0 | Completează valorile null/string[] cu datele proiectului. Câmpurile marcate în '_required' sunt minimul pentru rularea skill-urilor; restul cresc calitatea (mai ales voC_quotes și metrics.current pentru diagnostic). Nu șterge cheile — completează-le.",
+  "_required": [
+    "account.niche",
+    "audience.primary",
+    "goal"
+  ],
+  "project": {
+    "name": null,
+    "brand": null,
+    "website": null,
+    "language": "ro",
+    "market": "România",
+    "cultural_calibration": "direct, practic, anti-țeapă, dovadă locală"
+  },
+  "account": {
+    "handle": "ex: @numele.brandului",
+    "account_type": "alege: creator | business | personal",
+    "followers": "număr real curent sau aproximativ — NU inventa dacă nu știi",
+    "niche": "NIȘA CLARĂ — un singur domeniu; dacă ai nise multiple, enumeră-le și marchează problema",
+    "content_pillars": [
+      "pilonul 1 (tema repetabilă 1)",
+      "pilonul 2",
+      "pilonul 3"
+    ],
+    "setup_status": {
+      "professional_account": "da | nu | nu știu",
+      "upload_highest_quality": "da | nu | nu știu",
+      "search_engine_indexing": "da | nu | nu știu",
+      "account_status_clean": "da | nu (detaliază) | nu știu",
+      "translations_enabled": "da | nu | nu știu",
+      "bio_seo": "da (descrie) | nu | nu știu"
+    },
+    "bio_current": "bio-ul actual, verbatim",
+    "manychat_active": "da | nu"
+  },
+  "audience": {
+    "primary": "ex: mame 25-40 din orașe medii, cu copii mici, interesate de nutriție fără diete",
+    "demographics": null,
+    "awareness_stage": "alege: problem_unaware | solution_unaware | product_unaware | product_aware | most_aware",
+    "pains": [
+      "durerea 1, în cuvintele lor",
+      "durerea 2"
+    ],
+    "desires": [
+      "dorința 1",
+      "dorința 2"
+    ],
+    "voC_quotes": [
+      "citații EXACTE din comentarii/recenzii/interviuri — materia primă a hook-urilor; lasă [] dacă nu ai făcut research (generatorul va marca frazele ca 'inventate')"
+    ],
+    "forbidden_language": "cuvinte/fraze pe care brandul nu le folosește niciodată"
+  },
+  "offer": {
+    "product": "ce vinzi/promovezi (null dacă e cont pur de brand personal)",
+    "core_value": "ce primește concret cineva care ajunge din conținut la ofertă",
+    "cta_destination": "ex: DM cu keyword, link în bio, landing page",
+    "lead_magnet": "lucrul gratuit real pe care îl dai la CTA-ul de tip keyword (ex: ghid PDF) — null dacă nu există",
+    "urgency": "motivul REAL de a acționa acum — null dacă nu există; NU inventa"
+  },
+  "goal": "scopul livrabilului: reach (audiențe noi) | saves_authority | leads_comment_to_dm | brand_personal | growth_30day | diagnostic",
+  "topic": "pentru Reels/postări: subiectul concret cerut (null pentru plan/diagnostic)",
+  "tone": {
+    "voice": "ex: expert prietenos, direct, cu umor uscat",
+    "style_notes": "ex: propoziții scurte, fără jargon, 'tu' la persoana a doua",
+    "no_go": "ce ton/teme NU se folosesc"
+  },
+  "content_pool": {
+    "saved_viral_reels": "câte Reels virale (>1M views) din nișă ai salvat și studiat (țintă plan: 20+)",
+    "proven_formats": [
+      "format dovedit 1 din nișă (structura lui, rezumat)"
+    ],
+    "examples_you_liked": "postări/Reels proprii care au mers, ca referință de stil"
+  },
+  "metrics": {
+    "current": {
+      "note": "PENTRU DIAGNOSTIC — din Insights; lasă null ce nu ai. Fără cifre, diagnosticul nu rulează (se cere Insights mai întâi).",
+      "avg_views_last_10": null,
+      "hook_rate_3s": null,
+      "avg_watch_time_s": null,
+      "completion_rate": null,
+      "sends_per_views": null,
+      "saves_per_views": null,
+      "comments_per_1k_views": null,
+      "followers_share_of_views": "ex: '90% followeri / 10% non-followeri'",
+      "problem_examples": "link-uri/descrieri ale postărilor slabe"
+    },
+    "success_target": "ce ar însemna succesul lunii pentru tine (ex: 'un Reel peste 50k views', '10 lead-uri din comment-to-DM')"
+  },
+  "compliance": {
+    "regulated_category": "null sau: health | finance | housing | social | employment | political",
+    "regulated_notes": "obligațiile legale/de conformitate specifice",
+    "claims_to_avoid": [],
+    "ai_content_used": "folosești conținut generat AI semnificativ? (da|nu) — dacă da, disclosure obligatoriu"
+  },
+  "output_preferences": {
+    "deliverable": "ex: '3 Reels complete', 'carusel 8 slide-uri', 'plan 30 zile', 'audit setup', 'diagnostic'",
+    "reels_count": 1,
+    "posts_count": 0,
+    "include_hooks_variants": 3,
+    "include_audit_report": true,
+    "publish_channel": "trial_reels | normal | nesigur (recomandă kitul)"
+  }
+}

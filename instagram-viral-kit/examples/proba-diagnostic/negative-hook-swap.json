@@ -1,0 +1,21 @@
+{
+  "$comment": "FIXTURĂ NEGATIVĂ — trebuie să PICE la `tools/validate_output.py` (exit 1). Ea dovedește că regula Hook Swap e verificată mecanic, nu doar scrisă în ghid: are doar 2 hook-uri noi (protocolul cere 3) și unul dintre ele are 16 cuvinte (bugetul e 5–8). Nu „repara\" fixtura ca să treacă — ea există ca test.",
+  "kit": "instagram-viral-kit",
+  "kit_version": "1.2.1",
+  "brief_ref": "examples/proba-pedodontie/brief.json",
+  "language": "ro",
+  "diagnostics": [
+    {
+      "id": "N1",
+      "metric": "hook_rate_3s",
+      "actual": "12%",
+      "target": "≥ 25–35%",
+      "diagnosis": "Hook-ul nu oprește scroll-ul.",
+      "action": "hook_swap",
+      "new_hooks": [
+        "Acesta este un hook prea lung care nu respectă deloc regula de cinci până la opt",
+        "Prea scurt"
+      ]
+    }
+  ]
+}

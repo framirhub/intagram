@@ -1,0 +1,106 @@
+{
+  "$comment": "BRIEF DE PROBĂ — instagram-viral-kit v1.2.0 | Cont FICTIV, construit ca run de referință pentru validarea mecanică a kitului. VoC-ul NU a fost cercetat (voC_quotes = [] intenționat) ca să se vadă disciplin a kitului: frazele de durere ies marcate NEVOIE_RESEARCH, nu inventate.",
+  "_required": [
+    "account.niche",
+    "audience.primary",
+    "goal"
+  ],
+  "project": {
+    "name": "Proba pedodonție — run de referință v1.2.0",
+    "brand": "Zâmbetul Mic (fictiv)",
+    "website": null,
+    "language": "ro",
+    "market": "România",
+    "cultural_calibration": "direct, practic, anti-țeapă, dovadă locală"
+  },
+  "account": {
+    "handle": "@zambetul.mic",
+    "account_type": "business",
+    "followers": 1850,
+    "niche": "pedodonție — cabinet stomatologic pentru copii 0–12 ani (un singur domeniu)",
+    "content_pillars": [
+      "prima vizită fără frică",
+      "obiceiuri acasă (periaj, dulciuri, somn)",
+      "mituri și greșeli ale părinților"
+    ],
+    "setup_status": {
+      "professional_account": "da",
+      "upload_highest_quality": "da",
+      "search_engine_indexing": "nu — nu am bifat indexarea în motoarele de căutare",
+      "account_status_clean": "da — verificat, fără conținut restricționat pentru recomandări",
+      "translations_enabled": "nu știu",
+      "bio_seo": "nu — bio-ul actual nu conține niciun keyword de căutare"
+    },
+    "bio_current": "Bine ați venit la cabinetul nostru! Programări la telefon.",
+    "manychat_active": "nu"
+  },
+  "audience": {
+    "primary": "părinți 28–45 de ani din orașe mari, cu copii între 2 și 10 ani, care amână programarea la dentist de teama scenei",
+    "demographics": "majoritar mame (estimat 8 din 10), venit mediu, caută pe telefon în pauza de prânz",
+    "awareness_stage": "solution_unaware",
+    "pains": [
+      "copilul plânge în sala de așteptare și renunț la programare pe loc",
+      "am amânat doi ani pentru că nu știu cum să-l pregătesc",
+      "nu știu dacă e normal să sângereze gingia la periaj"
+    ],
+    "desires": [
+      "să intre în cabinet fără scandal și fără țipete",
+      "să știu exact ce se întâmplă la prima vizită, pas cu pas",
+      "să nu ajungem la urgență cu durere"
+    ],
+    "voC_quotes": [],
+    "forbidden_language": "„doare/ nu doare”, „garantat”, „vindecă”, orice promisiune de rezultat medical"
+  },
+  "offer": {
+    "product": "consultație de acomodare pentru copii (joc, familiarizare cu scaunul, fără tratament în prima vizită)",
+    "core_value": "copilul intră fără frică și părintele știe exact ce urmează, în 3 pași concreți",
+    "cta_destination": "DM cu keyword (ManyChat neactivat încă — keyword-urile se adună manual până la activare)",
+    "lead_magnet": "„Ghidul primei vizite” — o pagină PDF, lista de 7 zile de pregătire",
+    "urgency": null
+  },
+  "goal": "reach",
+  "topic": "prima vizită la dentist pentru copii, fără frică",
+  "tone": {
+    "voice": "medic prietenos, calm, fără dramatizare și fără vinovăție",
+    "style_notes": "propoziții scurte, „tu” la persoana a doua, zero termeni medicali nedescifrați, fără emoji în primele 125 de caractere",
+    "no_go": "nu speriem părintele, nu promitem rezultate, nu facem reclamă agresivă la ofertă în primele secunde"
+  },
+  "content_pool": {
+    "saved_viral_reels": "0 — de construit în Săptămâna 1 (țintă 20+)",
+    "proven_formats": [],
+    "examples_you_liked": null
+  },
+  "metrics": {
+    "current": {
+      "note": "Fără Insights reale — runul e de probă pe generare + validare, nu pe diagnostic.",
+      "avg_views_last_10": null,
+      "hook_rate_3s": null,
+      "avg_watch_time_s": null,
+      "completion_rate": null,
+      "sends_per_views": null,
+      "saves_per_views": null,
+      "comments_per_1k_views": null,
+      "followers_share_of_views": null,
+      "problem_examples": null
+    },
+    "success_target": "un Reel cu majoritate de views de la non-followeri + 20 de salvări la carusel + 10 cereri pe keyword"
+  },
+  "compliance": {
+    "regulated_category": "health",
+    "regulated_notes": "conținut medical pentru copii: fără diagnostic la distanță, fără promisiuni de rezultat, prima vizită fără tratament se declară ca atare; niciun testimonial de pacient fără acord scris",
+    "claims_to_avoid": [
+      "„fără durere, garantat”",
+      "„vindecă cariile acasă”",
+      "„nu mai ai nevoie de dentist după prima vizită”"
+    ],
+    "ai_content_used": "nu"
+  },
+  "output_preferences": {
+    "deliverable": "pachet de probă: 3 Reels + 1 carusel + plan 30 zile + audit de setup + audit de calitate",
+    "reels_count": 3,
+    "posts_count": 1,
+    "include_hooks_variants": 3,
+    "include_audit_report": true,
+    "publish_channel": "nesigur (recomandă kitul)"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kit": "instagram-viral-kit",
+  "kit_version": "1.2.1",
+  "brief_ref": "examples/proba-pedodontie/brief.json",
+  "language": "ro",
+  "generated_at": "2026-10-15T18:40:00+03:00",
+  "warnings": [
+    "Metricile din `actual` sunt valori de test (fixtură), nu date reale de cont — fixtura există ca să testeze traseul de diagnostic, nu ca exemplu de performanță.",
+    "Cifrele de țintă: sends/saves/comentarii = „heuristica kitului\"; skip rate și share/save rate = T3 (practician 2026, knowledge/corpus-2026.md)."
+  ],
+  "diagnostics": [
+    {
+      "id": "D1",
+      "metric": "hook_rate_3s",
+      "actual": "18% (skip rate 52%)",
+      "target": "hook rate ≥ 25–35%; skip rate peste ~40% = intro de reparat",
+      "diagnosis": "Prima etapă din funnel e stricată: 52% dintre privitori abandonează înainte de secunda 3, deci niciun semnal din aval (sends, saves, comentarii) nu are valoare diagnostică. Retenția după secunda 3 e bună — deci corpul Reel-ului nu e problema.",
+      "action": "hook_swap",
+      "new_hooks": [
+        "Cariile la copii nu apar de la dulciuri.",
+        "Nouă din zece părinți greșesc periajul copilului.",
+        "Dacă copilul tău mușcă periuța, ascultă asta."
+      ]
+    },
+    {
+      "id": "D2",
+      "metric": "saves_per_views",
+      "actual": "1 save la 400 views",
+      "target": "1 save la 50–100 views (heuristica kitului); save rate 1–3% (T3)",
+      "diagnosis": "Conținut consumabil, nu material de revenit: postarea informează, dar nu lasă nimic de verificat mai târziu. Nu e o problemă de hook (skip rate ok după reparație), ci de format.",
+      "action": "reference_slide",
+      "new_hooks": []
+    },
+    {
+      "id": "D3",
+      "metric": "followers_share_of_views",
+      "actual": "34% followeri / 66% non-followeri",
+      "target": "majoritate non-followeri = distribuție activă",
+      "diagnosis": "Reel-ul e în valul 2+ de distribuție (majoritate non-followeri); nu se repară nimic — se scalează formatul și se testează la 72h, nu la 30 de minute.",
+      "action": "none_within_target",
+      "new_hooks": []
+    }
+  ]
+}
